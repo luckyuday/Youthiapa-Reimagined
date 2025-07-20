@@ -1,0 +1,8 @@
+body {
+  background-color: #f6f6f6;
+}
+
+#root {
+  margin: 0 auto;
+  font-size: clamp(11px, 2vw, 22px);
+}

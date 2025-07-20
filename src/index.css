@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Outfit:wght@100..900&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: Outfit, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+
+  --dark-green: #091e05ff;
+  --seasalt: #f7f9f9ff;
+  --dark-purple: #3d2b3dff;
+  --hunyadi-yellow: #dda448ff;
+  --viridian: #558b6eff;
+  background-color: var(--seasalt);
+}
