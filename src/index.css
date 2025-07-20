@@ -2,6 +2,11 @@
 @import "tailwindcss";
 
 :root {
+  --dark-green: #091e05ff;
+  --seasalt: #f7f9f9ff;
+  --dark-purple: #3d2b3dff;
+  --hunyadi-yellow: #dda448ff;
+  --viridian: #558b6eff;
   font-family: Outfit, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -11,10 +16,5 @@
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 
-  --dark-green: #091e05ff;
-  --seasalt: #f7f9f9ff;
-  --dark-purple: #3d2b3dff;
-  --hunyadi-yellow: #dda448ff;
-  --viridian: #558b6eff;
   background-color: var(--seasalt);
 }

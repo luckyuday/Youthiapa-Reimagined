@@ -34,6 +34,7 @@ const Nav = () => {
         transformOrigin: "center center",
         duration: 0.3,
         ease: "power1.out",
+        stroke: "#f7f9f9ff",
       },
       0.1
     );
@@ -46,6 +47,7 @@ const Nav = () => {
         transformOrigin: "center center",
         duration: 0.3,
         ease: "power1.out",
+        stroke: "#f7f9f9ff",
       },
       0.1
     );
@@ -130,7 +132,7 @@ const Nav = () => {
       </div>
       <div
         ref={navigationbuttons}
-        className="w-screen h-screen bg-[#A2D5C6] fixed flex z-9 left-0 "
+        className="w-screen h-screen bg-[var(--dark-purple)] fixed flex z-9 left-0 "
       ></div>
     </div>
   );
