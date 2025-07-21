@@ -132,8 +132,12 @@ const Nav = () => {
       </div>
       <div
         ref={navigationbuttons}
-        className="w-screen h-screen bg-[var(--dark-purple)] fixed flex z-9 left-0 "
-      ></div>
+        className="w-screen h-screen bg-[var(--dark-purple)] fixed flex z-9 left-0 justify-center items-center"
+      >
+        <div>
+          <div id="menu-item">Home</div>
+        </div>
+      </div>
     </div>
   );
 };
