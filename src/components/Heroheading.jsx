@@ -8,7 +8,8 @@ const HeroHeading = ({
   className = "",
   style = {},
   fill = "#000000",
-
+  width,
+  height,
   ...props
 }) => {
   return (
@@ -16,6 +17,8 @@ const HeroHeading = ({
       className={className}
       style={style}
       fill={fill}
+      width={width}
+      height={height}
       viewBox="0 14.5 213.5500030517578 37.150001525878906"
       data-asc="1.027"
       {...props}

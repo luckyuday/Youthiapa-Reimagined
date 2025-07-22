@@ -34,7 +34,6 @@ const Nav = () => {
         transformOrigin: "center center",
         duration: 0.3,
         ease: "power1.out",
-        stroke: "#f7f9f9ff",
       },
       0.1
     );
@@ -47,7 +46,6 @@ const Nav = () => {
         transformOrigin: "center center",
         duration: 0.3,
         ease: "power1.out",
-        stroke: "#f7f9f9ff",
       },
       0.1
     );

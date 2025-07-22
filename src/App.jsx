@@ -8,7 +8,7 @@ import { SplitText } from "gsap/SplitText";
 import Nav from "./components/Nav";
 import MainRoutes from "./routes/MainRoutes";
 import { useRef } from "react";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 function App() {
   const smootherWrapperRef = useRef(null);
   const smootherContentRef = useRef(null);
