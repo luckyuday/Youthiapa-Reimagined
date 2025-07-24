@@ -8,6 +8,7 @@ import { SplitText } from "gsap/SplitText";
 import Nav from "./components/Nav";
 import MainRoutes from "./routes/MainRoutes";
 import { useRef } from "react";
+import Footer from "./components/Footer";
 function App() {
   const smootherWrapperRef = useRef(null);
   const smootherContentRef = useRef(null);
@@ -31,12 +32,9 @@ function App() {
       <div id="smooth-wrapper" ref={smootherWrapperRef}>
         <Nav />
 
-        <div
-          id="smooth-content"
-          ref={smootherContentRef}
-          className=" w-full py-[4rem]"
-        >
+        <div id="smooth-content" ref={smootherContentRef} className=" w-full ">
           <MainRoutes />
+          <Footer />
         </div>
       </div>
     </div>

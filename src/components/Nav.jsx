@@ -90,7 +90,7 @@ const Nav = () => {
         <button
           onClick={menutoggle}
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-          className="outline-none"
+          className="outline-none "
         >
           <svg
             width="2rem"
@@ -138,7 +138,7 @@ const Nav = () => {
       >
         <Link
           to={"/"}
-          className="menu-item w-[80%] border-t-2 px-[1rem] py-[2rem] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100"
+          className="menu-item tracking-wider w-[80%] border-t-2 px-[1rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100"
           onClick={handleLinkClick}
         >
           Home
@@ -146,16 +146,23 @@ const Nav = () => {
         <Link
           to={"/products"}
           onClick={handleLinkClick}
-          className="menu-item w-[80%] border-t-2 px-[1rem] py-[2rem] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100"
+          className="menu-item tracking-wider w-[80%]  border-t-2 px-[1rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100"
         >
           Products
         </Link>
         <Link
           to={"/about"}
           onClick={handleLinkClick}
-          className="menu-item w-[80%] border-y-2 px-[1rem] py-[2rem] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100"
+          className="menu-item tracking-wider w-[80%] border-t-2 px-[1rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100"
         >
           About
+        </Link>
+        <Link
+          to={"/signup"}
+          onClick={handleLinkClick}
+          className="menu-item tracking-wider w-[80%] border-y-2 px-[1rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100"
+        >
+          Sign up
         </Link>
       </div>
     </div>

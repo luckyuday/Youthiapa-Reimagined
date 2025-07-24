@@ -5,6 +5,7 @@ import HeroHeading from "../components/Heroheading";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { Link } from "react-router-dom";
+
 const Home = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
@@ -15,14 +16,22 @@ const Home = () => {
   const muteiconref = useRef(null);
   const t2 = useRef(null);
   const [isAudioOn, SetisAudioOn] = useState(false);
+
   const changeAudio = () => {
-    SetisAudioOn((prev) => !prev);
-    videoRef.current.muted = isAudioOn;
-    if (!isAudioOn) {
-      t2.current.play();
-    } else {
-      t2.current.reverse();
-    }
+    SetisAudioOn((prev) => {
+      if (videoRef.current) {
+        videoRef.current.muted = prev;
+      }
+      if (t2.current) {
+        if (prev) {
+          t2.current.play();
+        } else {
+          // If audio is being disabled (was on)
+          t2.current.reverse();
+        }
+      }
+      return !prev;
+    });
   };
 
   useGSAP(() => {
@@ -98,28 +107,28 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="pt-[3vw] px-[3vw] w-full flex flex-col items-center gap-2">
-      <div className=" w-full flex flex-col gap-[1rem] items-center text-[var(--dark-purple)]">
+    <div className="pt-12 sm:pt-16 md:pt-20 lg:pt-24 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 w-full flex flex-col items-center gap-8 sm:gap-10 md:gap-12">
+      <div className="w-full flex flex-col gap-4 sm:gap-6 items-center text-[var(--dark-purple)]">
         <div className="h-fit overflow-hidden w-full">
           <HeroHeading ref={headingRef} fill="#091e05ff" />
         </div>
         <h2
           ref={subheadingRef}
-          className="text-[.9rem] text-right text-[var(--dark-purple)] self-end"
+          className="text-sm sm:text-base md:text-lg lg:text-xl text-right text-[var(--dark-purple)] self-end"
         >
           Your Daily Dose of Awesome.
         </h2>
-        <h2 className="text-4xl md:text-6xl font-bold text-[var(--dark-green)] tracking-tight">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--dark-green)] tracking-tight">
           Wear Your Values.
         </h2>
 
-        <p className=" text-[1rem] text-center md:text-xl ">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center">
           Style that stands for something more.
         </p>
 
         <Link
           to={"/products"}
-          className="mt-[1rem] text-[1.05rem] outline-0 border border-[var(--dark-green)] w-fit py-[.7rem] px-[1.5rem] rounded-full hover:cursor-pointer hover:scale-110 active:scale-95 duration-100"
+          className="text-base sm:text-lg outline-0 border border-[var(--dark-green)] w-fit py-2 px-4 sm:py-3 sm:px-5 rounded-full hover:cursor-pointer hover:scale-110 active:scale-95 duration-100"
         >
           Explore the merchandise
         </Link>
@@ -131,11 +140,11 @@ const Home = () => {
           className="w-screen min-h-screen relative flex flex-col justify-center items-center "
         >
           <div
-            className="absolute top-[8vh] left-[5vh] w-fit  z-5 bg-[var(--seasalt)] flex gap-2   py-2 px-3 rounded-xl"
+            className="absolute top-4 left-4 sm:top-8 sm:left-8 md:top-12 md:left-12 w-fit z-50 bg-[var(--seasalt)] flex gap-2 sm:gap-3 py-2 px-3 sm:py-3 sm:px-4 rounded-xl cursor-pointer"
             onClick={changeAudio}
           >
             <svg
-              className="w-[1.1rem]"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
@@ -151,14 +160,14 @@ const Home = () => {
                 d="M20.4142 12.0001L23.9497 15.5356L22.5355 16.9498L19 13.4143L15.4645 16.9498L14.0503 15.5356L17.5858 12.0001L14.0503 8.46454L15.4645 7.05032L19 10.5859L22.5355 7.05032L23.9497 8.46454L20.4142 12.0001Z"
               ></path>
             </svg>
-            <h5 className="text-nowrap text-[1rem]">
+            <h5 className="text-nowrap text-sm sm:text-base">
               Click to {!isAudioOn ? "enable" : "disable"} sound
             </h5>
           </div>
           <video
             onClick={changeAudio}
             ref={videoRef}
-            src="./src\assets\a6fb5e33f9a64302ab7ce3bbf3efa3fb.HD-1080p-7.2Mbps-49439125.mp4"
+            src="./src/assets/a6fb5e33f9a64302ab7ce3bbf3efa3fb.HD-1080p-7.2Mbps-49439125.mp4"
             autoPlay
             muted
             loop
@@ -166,14 +175,14 @@ const Home = () => {
           ></video>
 
           <h1
-            className="text-[2rem] absolute w-[70%] leading-[2rem] text-[var(--seasalt)] text-center h-fit overflow-hidden pointer-events-none"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl absolute w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] leading-tight text-[var(--seasalt)] text-center h-fit overflow-hidden pointer-events-none"
             ref={videoText}
           >
-            A new chapter Born out of <br></br>
+            A new chapter Born out of <br className="md:hidden"></br>
             <span className="font-[Dosis]">Youthiapa</span>
           </h1>
           <h1
-            className="text-[1.1rem] leading-[1.5rem] absolute w-[80%] font-light  text-[var(--seasalt)] pointer-events-none"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl leading-normal sm:leading-relaxed absolute w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] font-light text-[var(--seasalt)] pointer-events-none"
             ref={videoText2}
           >
             Raised Right is our fresh drop for everyday comfort and
@@ -182,7 +191,7 @@ const Home = () => {
             and resilience. So when you wear Raised Right, you're repping more
             than style—you're repping values that matter.
             <br />
-            <span className="text-center block font-semibold text-[1.5rem] mt-[.5rem] font-[dosis]">
+            <span className="text-center block font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 sm:mt-3 font-[dosis]">
               No noise.
               <br />
               No nonsense.
@@ -191,6 +200,38 @@ const Home = () => {
             </span>
             <br />
           </h1>
+        </div>
+      </div>
+      <div className="w-full pb-12 sm:pb-16 md:pb-20 lg:pb-24 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 flex flex-col-reverse md:flex-row gap-8 sm:gap-10 md:gap-12 text-[var(--dark-purple)] justify-between">
+        <div className="flex w-full md:w-1/2 flex-col justify-center items-center gap-6 sm:gap-8">
+          <div className="w-full flex flex-col gap-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-center font-semibold">
+              Explore the <br />
+              <span className="font-[dosis] bg-[var(--dark-purple)] text-[var(--seasalt)] font-bold uppercase ">
+                Raised Right
+              </span>{" "}
+              Collection
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl">
+              Break free from the ordinary. Raised Right is a statement – bold
+              designs, unique fits, and an attitude that defies the norm. Find
+              your next signature piece.
+            </p>
+          </div>
+
+          <Link
+            to={"/products"}
+            className="mt-4 sm:mt-6 text-base sm:text-lg outline-0 border border-[var(--dark-green)] w-fit py-2 px-4 sm:py-3 sm:px-5 rounded-full hover:cursor-pointer hover:scale-110 active:scale-95 duration-100"
+          >
+            Explore the merchandise
+          </Link>
+        </div>
+        <div className="w-full md:w-1/2">
+          <img
+            src="src/assets/raisedrightpic.jpg"
+            alt=""
+            className="aspect-1/1 object-cover w-full"
+          />
         </div>
       </div>
     </div>
