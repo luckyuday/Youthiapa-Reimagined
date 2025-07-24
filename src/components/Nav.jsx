@@ -138,7 +138,7 @@ const Nav = () => {
       >
         <Link
           to={"/"}
-          className="menu-item tracking-wider w-[80%] border-t-2 px-[1rem] md:px-[2rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100 rounded-4xl"
+          className="menu-item tracking-wider w-[80%] border-t-2 px-[1rem] md:px-[2rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100 rounded-xl "
           onClick={handleLinkClick}
         >
           Home
@@ -146,21 +146,21 @@ const Nav = () => {
         <Link
           to={"/products"}
           onClick={handleLinkClick}
-          className="menu-item tracking-wider w-[80%]  border-t-2 px-[1rem] md:px-[2rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100 rounded-4xl"
+          className="menu-item tracking-wider w-[80%]  border-t-2 px-[1rem] md:px-[2rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100 rounded-xl"
         >
           Products
         </Link>
         <Link
           to={"/about"}
           onClick={handleLinkClick}
-          className="menu-item tracking-wider w-[80%] border-t-2 px-[1rem] md:px-[2rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100 rounded-4xl"
+          className="menu-item tracking-wider w-[80%] border-t-2 px-[1rem] md:px-[2rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100 rounded-xl"
         >
           About
         </Link>
         <Link
           to={"/signup"}
           onClick={handleLinkClick}
-          className="menu-item tracking-wider w-[80%] border-y-2 px-[1rem] md:px-[2rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100 rounded-4xl"
+          className="menu-item tracking-wider w-[80%] border-y-2 px-[1rem] md:px-[2rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100 rounded-xl"
         >
           Sign up
         </Link>

@@ -2,12 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer
-      className="w-full 
-                       px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24
-                       pb-4 sm:pb-6 
-                       flex flex-col gap-5"
-    >
+    <footer className="w-full pt-[4rem] px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 pb-4 sm:pb-6 flex flex-col gap-5">
       <h1
         className="
         text-4xl sm:text-5xl md:text-6xl lg:text-7xl 
@@ -18,13 +13,7 @@ const Footer = () => {
         Socials
       </h1>
       <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8">
-        {" "}
-        <div
-          className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 /* Responsive icon size */
-                        group hover:bg-[var(--dark-green)] duration-100 p-2 sm:p-3 rounded-xl
-                        flex items-center justify-center"
-        >
-          {" "}
+        <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 group hover:bg-[var(--dark-green)] duration-100 p-2 sm:p-3 rounded-xl flex items-center justify-center">
           <a
             href="https://facebook.com/youthiapamachaao"
             target="_blank"

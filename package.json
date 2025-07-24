@@ -15,8 +15,10 @@
     "axios": "^1.11.0",
     "framer-motion": "^12.23.7",
     "gsap": "^3.13.0",
+    "ogl": "^1.0.11",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-hook-form": "^7.61.1",
     "react-router-dom": "^7.7.0",
     "tailwindcss": "^4.1.11"
   },
