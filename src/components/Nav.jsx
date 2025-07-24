@@ -61,14 +61,26 @@ const Nav = () => {
   });
 
   const menutoggle = () => {
-    setIsMenuOpen((prev) => !prev);
-    const tl = menuAnimationTimeline.current;
-    if (tl) {
-      if (isMenuOpen) {
-        tl.reverse();
-      } else {
-        tl.play();
+    // This logic works fine, but let's make it slightly more robust
+    // by not relying on the stale 'isMenuOpen' state for the animation call.
+    setIsMenuOpen((prev) => {
+      const newIsMenuOpen = !prev;
+      const tl = menuAnimationTimeline.current;
+      if (tl) {
+        if (newIsMenuOpen) {
+          tl.play();
+        } else {
+          tl.reverse();
+        }
       }
+      return newIsMenuOpen;
+    });
+  };
+
+  // 2. Create a handler that closes the menu if it's open
+  const handleLinkClick = () => {
+    if (isMenuOpen) {
+      menutoggle();
     }
   };
 
@@ -78,7 +90,7 @@ const Nav = () => {
         <button
           onClick={menutoggle}
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-          className=""
+          className="outline-none"
         >
           <svg
             width="2rem"
@@ -122,17 +134,29 @@ const Nav = () => {
       </div>
       <div
         ref={navigationbuttons}
-        className="w-screen min-h-screen h-fit overflow-auto bg-[var(--redwood)] font-[dosis] text-[var(--seasalt)] text-[3rem] fixed flex flex-col z-9 left-0 justify-center items-center p-[2rem] "
+        className="w-screen min-h-screen h-fit overflow-auto bg-[var(--seasalt)] font-[dosis] text-[var(--dark-purple)] text-[3rem] fixed flex flex-col z-9 left-0 justify-center items-center p-[2rem] "
       >
-        <div className="menu-item flex gap-2 items-center justify-start w-[80%]">
+        <Link
+          to={"/"}
+          className="menu-item w-[80%] border-t-2 px-[1rem] py-[2rem] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100"
+          onClick={handleLinkClick}
+        >
           Home
-        </div>
-        <div className="menu-item flex gap-2 items-center justify-start w-[80%]">
+        </Link>
+        <Link
+          to={"/products"}
+          onClick={handleLinkClick}
+          className="menu-item w-[80%] border-t-2 px-[1rem] py-[2rem] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100"
+        >
           Products
-        </div>
-        <div className="menu-item flex gap-2 items-center justify-start w-[80%]">
+        </Link>
+        <Link
+          to={"/about"}
+          onClick={handleLinkClick}
+          className="menu-item w-[80%] border-y-2 px-[1rem] py-[2rem] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100"
+        >
           About
-        </div>
+        </Link>
       </div>
     </div>
   );

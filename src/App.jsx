@@ -8,7 +8,6 @@ import { SplitText } from "gsap/SplitText";
 import Nav from "./components/Nav";
 import MainRoutes from "./routes/MainRoutes";
 import { useRef } from "react";
-import axios from "./api/api";
 function App() {
   const smootherWrapperRef = useRef(null);
   const smootherContentRef = useRef(null);
@@ -29,8 +28,9 @@ function App() {
 
   return (
     <div className="relative w-full  h-full">
-      <Nav />
       <div id="smooth-wrapper" ref={smootherWrapperRef}>
+        <Nav />
+
         <div
           id="smooth-content"
           ref={smootherContentRef}
