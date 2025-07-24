@@ -1,22 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";
-
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { Link } from "react-router-dom";
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuAnimationTimeline = useRef(null);
-  const navigationbuttons = useRef(null);
 
-  useEffect(() => {
-    const lineTop = document.getElementById("line-top");
-    const lineMiddle = document.getElementById("line-middle");
-    const lineBottom = document.getElementById("line-bottom");
+  const lineTop = useRef();
+  const lineMiddle = useRef();
+  const lineBottom = useRef();
+  const navigationbuttons = useRef();
+  const menuAnimationTimeline = useRef();
 
+  useGSAP(() => {
     gsap.set(navigationbuttons.current, { x: "100vw" });
 
-    menuAnimationTimeline.current = gsap.timeline({ paused: true });
+    const tl = gsap.timeline({ paused: true });
 
-    menuAnimationTimeline.current.to(
-      lineMiddle,
+    tl.to(
+      lineMiddle.current,
       {
         opacity: 0,
         scaleX: 0,
@@ -24,53 +25,44 @@ const Nav = () => {
         ease: "power1.out",
       },
       0
-    );
-
-    menuAnimationTimeline.current.to(
-      lineTop,
-      {
-        y: 5,
-        rotation: 45,
-        transformOrigin: "center center",
-        duration: 0.3,
-        ease: "power1.out",
-      },
-      0.1
-    );
-
-    menuAnimationTimeline.current.to(
-      lineBottom,
-      {
-        y: -5,
-        rotation: -45,
-        transformOrigin: "center center",
-        duration: 0.3,
-        ease: "power1.out",
-      },
-      0.1
-    );
-    menuAnimationTimeline.current.to(
-      navigationbuttons.current,
-      {
-        x: "0vw",
-        duration: 0.5,
-        ease: "power1.out",
-      },
-      0.1
-    );
-
-    return () => {
-      if (menuAnimationTimeline.current) {
-        menuAnimationTimeline.current.kill();
-      }
-    };
-  }, []);
+    )
+      .to(
+        lineTop.current,
+        {
+          y: 5,
+          rotation: 45,
+          transformOrigin: "center center",
+          duration: 0.3,
+          ease: "power1.out",
+        },
+        0.1
+      )
+      .to(
+        lineBottom.current,
+        {
+          y: -5,
+          rotation: -45,
+          transformOrigin: "center center",
+          duration: 0.3,
+          ease: "power1.out",
+        },
+        0.1
+      )
+      .to(
+        navigationbuttons.current,
+        {
+          x: "0vw",
+          duration: 0.5,
+          ease: "power1.out",
+        },
+        0.1
+      );
+    menuAnimationTimeline.current = tl;
+  });
 
   const menutoggle = () => {
     setIsMenuOpen((prev) => !prev);
-
     const tl = menuAnimationTimeline.current;
-
     if (tl) {
       if (isMenuOpen) {
         tl.reverse();
@@ -96,7 +88,7 @@ const Nav = () => {
           >
             {/* These IDs MUST be unique if multiple Nav components are rendered */}
             <line
-              id="line-top"
+              ref={lineTop}
               x1="3"
               y1="7"
               x2="21"
@@ -106,7 +98,7 @@ const Nav = () => {
               strokeLinecap="round"
             />
             <line
-              id="line-middle"
+              ref={lineMiddle}
               x1="3"
               y1="12"
               x2="21"
@@ -116,7 +108,7 @@ const Nav = () => {
               strokeLinecap="round"
             />
             <line
-              id="line-bottom"
+              ref={lineBottom}
               x1="3"
               y1="17"
               x2="21"
@@ -130,10 +122,16 @@ const Nav = () => {
       </div>
       <div
         ref={navigationbuttons}
-        className="w-screen h-screen bg-[var(--dark-purple)] fixed flex z-9 left-0 justify-center items-center"
+        className="w-screen min-h-screen h-fit overflow-auto bg-[var(--redwood)] font-[dosis] text-[var(--seasalt)] text-[3rem] fixed flex flex-col z-9 left-0 justify-center items-center p-[2rem] "
       >
-        <div>
-          <div id="menu-item">Home</div>
+        <div className="menu-item flex gap-2 items-center justify-start w-[80%]">
+          Home
+        </div>
+        <div className="menu-item flex gap-2 items-center justify-start w-[80%]">
+          Products
+        </div>
+        <div className="menu-item flex gap-2 items-center justify-start w-[80%]">
+          About
         </div>
       </div>
     </div>

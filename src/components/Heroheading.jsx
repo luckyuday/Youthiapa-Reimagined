@@ -14,7 +14,6 @@ const HeroHeading = ({
 }) => {
   return (
     <svg
-      className={className}
       style={style}
       fill={fill}
       width={width}

@@ -8,20 +8,14 @@ import { SplitText } from "gsap/SplitText";
 import Nav from "./components/Nav";
 import MainRoutes from "./routes/MainRoutes";
 import { useRef } from "react";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+import axios from "./api/api";
 function App() {
   const smootherWrapperRef = useRef(null);
   const smootherContentRef = useRef(null);
 
   useGSAP(
     () => {
-      // Check if refs are available
-      if (!smootherWrapperRef.current || !smootherContentRef.current) {
-        console.warn("ScrollSmoother wrapper or content elements not found.");
-        return;
-      }
-
-      // Pass the actual DOM elements from the refs to ScrollSmoother.create()
+      gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
       ScrollSmoother.create({
         wrapper: smootherWrapperRef.current,
         content: smootherContentRef.current,
@@ -40,7 +34,7 @@ function App() {
         <div
           id="smooth-content"
           ref={smootherContentRef}
-          className="min-h-screen w-full py-[4rem]"
+          className=" w-full py-[4rem]"
         >
           <MainRoutes />
         </div>
