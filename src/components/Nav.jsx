@@ -134,11 +134,11 @@ const Nav = () => {
       </div>
       <div
         ref={navigationbuttons}
-        className="w-screen min-h-screen h-fit overflow-auto bg-[var(--seasalt)] font-[dosis] text-[var(--dark-purple)] text-[3rem] fixed flex flex-col z-9 left-0 justify-center items-center p-[2rem] "
+        className="w-screen min-h-screen h-fit overflow-auto bg-[var(--seasalt)] font-[dosis] text-[var(--dark-purple)] text-[3rem] fixed flex flex-col z-9 left-0 justify-center items-center p-[2rem]  "
       >
         <Link
           to={"/"}
-          className="menu-item tracking-wider w-[80%] border-t-2 px-[1rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100"
+          className="menu-item tracking-wider w-[80%] border-t-2 px-[1rem] md:px-[2rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100 rounded-4xl"
           onClick={handleLinkClick}
         >
           Home
@@ -146,21 +146,21 @@ const Nav = () => {
         <Link
           to={"/products"}
           onClick={handleLinkClick}
-          className="menu-item tracking-wider w-[80%]  border-t-2 px-[1rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100"
+          className="menu-item tracking-wider w-[80%]  border-t-2 px-[1rem] md:px-[2rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100 rounded-4xl"
         >
           Products
         </Link>
         <Link
           to={"/about"}
           onClick={handleLinkClick}
-          className="menu-item tracking-wider w-[80%] border-t-2 px-[1rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100"
+          className="menu-item tracking-wider w-[80%] border-t-2 px-[1rem] md:px-[2rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100 rounded-4xl"
         >
           About
         </Link>
         <Link
           to={"/signup"}
           onClick={handleLinkClick}
-          className="menu-item tracking-wider w-[80%] border-y-2 px-[1rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100"
+          className="menu-item tracking-wider w-[80%] border-y-2 px-[1rem] md:px-[2rem] py-[2vw] border-[var(--dark-purple)] hover:bg-[var(--dark-purple)] hover:text-[var(--seasalt)] duration-100 rounded-4xl"
         >
           Sign up
         </Link>

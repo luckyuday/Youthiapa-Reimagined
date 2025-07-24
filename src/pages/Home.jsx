@@ -140,7 +140,7 @@ const Home = () => {
           className="w-screen min-h-screen relative flex flex-col justify-center items-center "
         >
           <div
-            className="absolute top-4 left-4 sm:top-8 sm:left-8 md:top-12 md:left-12 w-fit z-50 bg-[var(--seasalt)] flex gap-2 sm:gap-3 py-2 px-3 sm:py-3 sm:px-4 rounded-xl cursor-pointer"
+            className="absolute top-10 left-4 sm:top-8 sm:left-8 md:top-12 md:left-12 w-fit z-50 bg-[var(--seasalt)] flex gap-2 sm:gap-3 py-2 px-3 sm:py-3 sm:px-4 rounded-xl cursor-pointer"
             onClick={changeAudio}
           >
             <svg
