@@ -17,7 +17,6 @@ const Home = () => {
   const muteiconref = useRef(null);
   const subHeadingRef2 = useRef(null);
   const subHeading2Pararef = useRef(null);
-  const ButtonRef = useRef(null);
   const t2 = useRef(null);
   const [isAudioOn, SetisAudioOn] = useState(false);
 
@@ -41,7 +40,7 @@ const Home = () => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger, SplitText);
     t2.current = gsap.timeline({ paused: true });
-    t2.current.to(muteiconref.current, {
+    t2.current.from(muteiconref.current, {
       opacity: 0,
       duration: 0.1,
       ease: "power1.in",
