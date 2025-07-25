@@ -144,8 +144,11 @@ const About = () => {
       ref={componentRef}
       className="pt-12 w-full overflow-x-hidden flex flex-col items-center"
     >
-      <div className="flex px-6 items-center justify-center h-fit overflow-hidden">
-        <AboutHeading ref={AboutHeadingRef} className="w-32 md:w-40" />
+      <div className="flex px-6 w-full items-center justify-center h-fit overflow-hidden">
+        <AboutHeading
+          ref={AboutHeadingRef}
+          className="w-[50vw] md:w-[30vw] lg:w-[25vw]"
+        />
       </div>
 
       <div className="flex flex-col px-6 relative items-center justify-center min-h-[70vh]">
