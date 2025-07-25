@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { nanoid } from "nanoid";
+import signupImageSrc from "../assets/signup image.webp";
 const Signup = () => {
   const {
     register,
@@ -17,7 +18,7 @@ const Signup = () => {
     <div className="flex flex-col md:flex-row w-full min-h-screen items-center justify-center gap-4 md:gap-8 lg:gap-12 px-4 md:px-8 lg:px-16 py-8 md:py-12 max-w-7xl mx-auto overflow-hidden">
       <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0">
         <img
-          src="src\assets\signup image.webp"
+          src={signupImageSrc}
           alt="Illustration of a person with hands joined, representing welcome or greeting"
           loading="lazy"
           className="w-full aspect-1/1 md:aspect-square object-cover object-top rounded-lg shadow-lg"
