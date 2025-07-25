@@ -21,26 +21,25 @@ const Home = () => {
   const [isAudioOn, SetisAudioOn] = useState(false);
 
   const changeAudio = () => {
-    SetisAudioOn((prev) => {
-      if (videoRef.current) {
-        videoRef.current.muted = prev;
+    const newIsAudioOn = !isAudioOn;
+
+    SetisAudioOn(newIsAudioOn);
+    if (videoRef.current) {
+      videoRef.current.muted = !newIsAudioOn;
+    }
+    if (t2.current) {
+      if (newIsAudioOn) {
+        t2.current.play();
+      } else {
+        t2.current.reverse();
       }
-      if (t2.current) {
-        if (prev) {
-          t2.current.play();
-        } else {
-          // If audio is being disabled (was on)
-          t2.current.reverse();
-        }
-      }
-      return !prev;
-    });
+    }
   };
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger, SplitText);
     t2.current = gsap.timeline({ paused: true });
-    t2.current.from(muteiconref.current, {
+    t2.current.to(muteiconref.current, {
       opacity: 0,
       duration: 0.1,
       ease: "power1.in",

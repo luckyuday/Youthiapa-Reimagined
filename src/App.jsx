@@ -9,6 +9,7 @@ import Nav from "./components/Nav";
 import MainRoutes from "./routes/MainRoutes";
 import { useRef } from "react";
 import Footer from "./components/Footer";
+import ScrollReset from "./components/ScrollReset";
 
 function App() {
   const smootherWrapperRef = useRef(null);
@@ -31,8 +32,8 @@ function App() {
   return (
     <div className="relative w-full  h-full">
       <div id="smooth-wrapper" ref={smootherWrapperRef}>
+        <ScrollReset />
         <Nav />
-
         <div id="smooth-content" ref={smootherContentRef} className=" w-full ">
           <MainRoutes />
           <Footer />
