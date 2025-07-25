@@ -15,6 +15,9 @@ const Home = () => {
   const videoText = useRef(null);
   const videoText2 = useRef(null);
   const muteiconref = useRef(null);
+  const subHeadingRef2 = useRef(null);
+  const subHeading2Pararef = useRef(null);
+  const ButtonRef = useRef(null);
   const t2 = useRef(null);
   const [isAudioOn, SetisAudioOn] = useState(false);
 
@@ -44,6 +47,12 @@ const Home = () => {
       ease: "power1.in",
     });
     let split = SplitText.create(subheadingRef.current, { type: "chars" });
+    let subheading2 = SplitText.create(subHeadingRef2.current, {
+      type: "chars",
+    });
+    let subheading2para = SplitText.create(subHeading2Pararef.current, {
+      type: "chars",
+    });
     let splitvideochars = SplitText.create(videoText.current, {
       type: "words",
     });
@@ -57,6 +66,18 @@ const Home = () => {
     });
     gsap.from(split.chars, {
       scale: 0,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.03,
+      ease: "power1.in",
+    });
+    gsap.from(subheading2.chars, {
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.03,
+      ease: "power1.in",
+    });
+    gsap.from(subheading2para.chars, {
       opacity: 0,
       duration: 0.5,
       stagger: 0.03,
@@ -119,11 +140,17 @@ const Home = () => {
         >
           Your Daily Dose of Awesome.
         </h2>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--dark-green)] tracking-tight">
+        <h2
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--dark-green)] tracking-tight"
+          ref={subHeadingRef2}
+        >
           Wear Your Values.
         </h2>
 
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center">
+        <p
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-center"
+          ref={subHeading2Pararef}
+        >
           Style that stands for something more.
         </p>
 

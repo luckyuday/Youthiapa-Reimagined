@@ -54,7 +54,7 @@ const About = () => {
           trigger: parent2Ref.current,
           pin: true,
           start: "top top",
-          end: "+=600%",
+          end: "+=1000%",
           scrub: 1,
         },
       });
