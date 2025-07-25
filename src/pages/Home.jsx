@@ -167,7 +167,7 @@ const Home = () => {
           <video
             onClick={changeAudio}
             ref={videoRef}
-            src="./src/assets/a6fb5e33f9a64302ab7ce3bbf3efa3fb.HD-1080p-7.2Mbps-49439125.mp4"
+            src="src\assets\hero video.webm"
             autoPlay
             muted
             loop
