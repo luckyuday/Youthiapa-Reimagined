@@ -86,6 +86,7 @@ const About = () => {
           () => {
             if (backgroundVideoRef.current) {
               backgroundVideoRef.current.muted = false;
+              backgroundVideoRef.current.play = true;
             }
           },
           [],
@@ -177,7 +178,6 @@ const About = () => {
           <video
             ref={backgroundVideoRef}
             src={backgroundVideoSrc}
-            autoPlay
             muted
             loop
             playsInline
