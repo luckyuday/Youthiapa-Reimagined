@@ -5,7 +5,7 @@ import HeroHeading from "../components/Heroheading";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { Link } from "react-router-dom";
-
+import backgroundVideoSrc from "../assets/hero video.webm";
 const Home = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
@@ -167,7 +167,7 @@ const Home = () => {
           <video
             onClick={changeAudio}
             ref={videoRef}
-            src="src\assets\hero video.webm"
+            src={backgroundVideoSrc}
             autoPlay
             muted
             loop
