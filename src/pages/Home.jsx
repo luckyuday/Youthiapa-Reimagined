@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { Link } from "react-router-dom";
 import backgroundVideoSrc from "../assets/hero video.webm";
+import raisedRightPicSrc from "../assets/raisedrightpic.jpg";
 const Home = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
@@ -228,8 +229,8 @@ const Home = () => {
         </div>
         <div className="w-full md:w-1/2">
           <img
-            src="src/assets/raisedrightpic.jpg"
-            alt=""
+            src={raisedRightPicSrc}
+            alt="raised right Pic"
             className="aspect-1/1 object-cover w-full"
           />
         </div>
